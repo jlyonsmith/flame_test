@@ -46,43 +46,43 @@ class DebugComponent extends PositionComponent {
 
   @override
   void onMount() {
-    debugPrint('COMPONENT: onMount');
     super.onMount();
+    debugPrint('COMPONENT: onMount');
   }
 
   @override
   void onGameResize(Vector2 size) {
-    debugPrint('COMPONENT: onGameResize');
     super.onGameResize(size);
+    debugPrint('COMPONENT: onGameResize');
   }
 
   @override
   Future<void>? onLoad() async {
-    debugPrint('COMPONENT: onLoad');
     await super.onLoad();
+    debugPrint('COMPONENT: onLoad');
   }
 
   @override
   void onRemove() {
-    debugPrint('COMPONENT: onRemove');
     super.onRemove();
+    debugPrint('COMPONENT: onRemove');
   }
 
   @override
   void update(double dt) {
+    super.update(dt);
     if (frames < 10) {
       debugPrint('COMPONENT: update');
     }
-    super.update(dt);
     frames++;
   }
 
   @override
   void render(Canvas canvas) {
+    super.render(canvas);
     if (frames < 10) {
       debugPrint('COMPONENT: render');
     }
-    super.render(canvas);
     frames++;
   }
 }
@@ -96,43 +96,45 @@ class TheGame extends FlameGame {
 
   @override
   void onMount() {
-    debugPrint('GAME: onMount');
     super.onMount();
+    debugPrint('GAME: onMount');
   }
 
   @override
   void onGameResize(Vector2 size) {
-    debugPrint('GAME: onGameResize');
     super.onGameResize(size);
+    debugPrint('GAME: onGameResize');
   }
 
   @override
   Future<void>? onLoad() async {
-    debugPrint('GAME: onLoad');
+    // NOTE: If don't call `onLoad` here we get the `onRemove` after `onLoad`!
     await super.onLoad();
+    debugPrint('GAME: onLoad');
+    // await super.onLoad();
   }
 
   @override
   void onRemove() {
-    debugPrint('GAME: onRemove');
     super.onRemove();
+    debugPrint('GAME: onRemove');
   }
 
   @override
   void update(double dt) {
+    super.update(dt);
     if (frames < 10) {
       debugPrint('GAME: update');
     }
-    super.update(dt);
     frames++;
   }
 
   @override
   void render(Canvas canvas) {
+    super.render(canvas);
     if (frames < 10) {
       debugPrint('GAME: render');
     }
-    super.render(canvas);
     frames++;
   }
 }
