@@ -118,6 +118,8 @@ class TheGame extends FlameGame {
   void onRemove() {
     super.onRemove();
     debugPrint('GAME: onRemove');
+    removeAll(children);
+    processLifecycleEvents();
   }
 
   @override
